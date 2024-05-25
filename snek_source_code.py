@@ -1,6 +1,6 @@
 from tkinter import *
 import random
-#acreate checkered tile
+
 GAME_BREADTH=700
 GAME_HEIGHT=700
 SPEED=90
@@ -116,7 +116,7 @@ def restart():
     next_turn(snake,food)
     restart_button.destroy()
 def game_over():
-    #add high score and users score here
+
     global restart_button,score
     canvas.delete(ALL)
     file=open('score.txt','r+')
@@ -170,7 +170,7 @@ root.title("Snek game")
 root.resizable(False,False)
 
 score=0
-#dir='right'
+
 
 label=Label(root,text="SCORE:{}".format(score),font=('Verdana',30))
 label.place(x=250,y=10)
@@ -183,7 +183,7 @@ label2.place(x=0,y=0)
 file.close()
 canvas=Canvas(root,bg="#000000",height=GAME_HEIGHT,width=GAME_HEIGHT)
 
-#checkered_tiles()
+
 canvas.pack()
 root.bind('<Left>', lambda event: change_dir('left'))
 root.bind('<Right>', lambda event: change_dir('right'))
@@ -199,9 +199,4 @@ easy_button.place(x=130,y=350)
 medium_button.place(x=260,y=350)
 hard_button.place(x=440,y=350)
 
-'''
-snake=Snake()
-food=Food()
-restart_button=Button()
-next_turn(snake,food)'''
 root.mainloop()
