@@ -104,7 +104,6 @@ def checkered_tiles():
 
 
 def restart():
-
     global snake,food,score,dir,restart_button
     canvas.delete(ALL)
     checkered_tiles()
@@ -176,6 +175,7 @@ label=Label(root,text="SCORE:{}".format(score),font=('Verdana',30))
 label.place(x=250,y=10)
 label.pack()
 
+#opens file to display the previous high score
 file=open('score.txt','r')
 prev_high_score=int(file.read())
 label2=Label(root,text="HIGH SCORE:{}".format(prev_high_score),font=('Verdana',30))
@@ -191,6 +191,7 @@ root.bind('<Down>', lambda event: change_dir('down'))
 root.bind('<Up>', lambda event: change_dir('up'))
 restart_button=Button()
 
+#initialized buttons to choose difficulty level
 easy_button=Button(root,text="Easy",command=easy,font=('Verdana',35),bg='#FFFFFF',fg="#FFC247")
 medium_button=Button(root,text="Medium",command=medium,font=('Verdana',35),bg='#FFFFFF',fg="#DF7E20")
 hard_button=Button(root,text="Hard",command=hard,font=('Verdana',35),bg='#FFFFFF',fg="#FF0000")
